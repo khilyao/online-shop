@@ -1,9 +1,9 @@
 import s from "./Container.module.scss";
 import { ReactNode } from "react";
 
-interface Props {
+type Props = {
   children?: ReactNode;
-}
+};
 
 const Container = ({ children }: Props) => {
   return <div className={s.container}>{children}</div>;

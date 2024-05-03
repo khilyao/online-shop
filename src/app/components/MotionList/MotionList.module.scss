@@ -1,0 +1,29 @@
+.motionMenu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 55px;
+
+  height: 100vh;
+  width: 220px;
+
+  padding: 0 0 0 18px;
+  padding-top: 100px;
+
+  color: white;
+
+  font-size: 12px;
+  letter-spacing: 0.6em;
+  list-style-type: none;
+  transition: background-color 600ms linear;
+
+  @media screen and (min-width: 640px) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
+    width: 400px;
+    max-height: 1000px;
+  }
+}
