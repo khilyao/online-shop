@@ -1,3 +1,5 @@
+"use client";
+
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -24,3 +26,5 @@ const AnimatedText = ({ text, className }: Props) => {
     </p>
   );
 };
+
+export default AnimatedText;
