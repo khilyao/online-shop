@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  padding: 20px 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBtnGroup {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 26px;
+  height: 26px;
+
+  margin-right: 26px;
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.basket {
+  margin-right: 42px;
+
+  transition: fill 150ms linear;
+  fill: black;
+
+  &:hover {
+    fill: #221c1c;
+  }
+}
+
+.burger {
+  height: 26px;
+  padding-top: 9px;
+}
+
+.basket,
+.burger,
+.avatar,
+.logo {
+  cursor: pointer;
+}
+
+.burger,
+.avatar,
+.basket {
+  transition: transform 150ms linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
