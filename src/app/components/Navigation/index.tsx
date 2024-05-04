@@ -4,7 +4,7 @@ import { useState } from "react";
 import s from "./Navigation.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@assets/logo.png";
+import logo from "@assets/logo.jpg";
 import Basket from "@assets/basket.svg";
 import SideBar from "../SideBar";
 

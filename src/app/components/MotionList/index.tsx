@@ -14,7 +14,11 @@ const MotionList = ({ items, isListShouldOpen }: Props) => {
       className={s.motionMenu}
       variants={sidebar}
       animate={isListShouldOpen ? "open" : "closed"}
-      style={{ background: isListShouldOpen ? "#0129ff" : "#fff" }}
+      style={{
+        color: isListShouldOpen ? "#fff" : "transparent",
+        background: isListShouldOpen ? "#0129ff" : "transparent",
+        pointerEvents: isListShouldOpen ? "auto" : "none",
+      }}
       transition={{ duration: 1.4 }}
     >
       {items.map((page, index) => (

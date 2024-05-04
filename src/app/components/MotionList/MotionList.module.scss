@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 55px;
+  gap: 70px;
 
   height: 100vh;
   width: 220px;
@@ -10,12 +10,12 @@
   padding: 0 0 0 18px;
   padding-top: 100px;
 
-  color: white;
-
+  font-family: "Judson", serif;
+  line-height: 0.9;
   font-size: 12px;
   letter-spacing: 0.6em;
   list-style-type: none;
-  transition: background-color 600ms linear;
+  transition: background-color 600ms linear, color 400ms linear;
 
   @media screen and (min-width: 640px) {
     font-size: 13px;
@@ -26,6 +26,7 @@
     width: 400px;
 
     padding-left: 40px;
+    gap: 90px;
 
     font-size: 15px;
   }

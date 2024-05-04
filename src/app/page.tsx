@@ -4,6 +4,7 @@ import Header from "@components/Header";
 import VideoPlayer from "./VideoPlayer";
 import PreviewStore from "@components/PreviewStore";
 import Container from "./components/Container";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <PreviewStore />
         </Container>
       </main>
+      <Footer />
     </>
   );
 }

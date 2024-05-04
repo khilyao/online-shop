@@ -1,9 +1,10 @@
 import Navigation from "@components/Navigation";
 import Container from "../Container";
+import s from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <header>
+    <header className={s.header}>
       <Container>
         <Navigation />
       </Container>

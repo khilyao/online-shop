@@ -1,0 +1,16 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-gap: 20px;
+  list-style: none;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

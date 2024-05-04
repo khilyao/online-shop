@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={(roboto.className, judson.className)}>{children}</body>
+      <body className={(judson.className, roboto.className)}>{children}</body>
     </html>
   );
 }

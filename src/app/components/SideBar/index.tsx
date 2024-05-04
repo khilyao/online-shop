@@ -21,7 +21,10 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen }: Props) => {
   ];
 
   return (
-    <aside className={s.sidebar}>
+    <aside
+      className={s.sidebar}
+      style={{ pointerEvents: isSideBarOpen ? "auto" : "none" }}
+    >
       {isSideBarOpen ? (
         <MenuCLoseBtn
           fill={"#fff"}
