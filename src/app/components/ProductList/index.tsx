@@ -17,17 +17,18 @@ const ProductList = () => {
   const [screenSize, setScreenSize] = useState(0);
 
   useEffect(() => {
-    setScreenSize(window.innerWidth);
-
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
       setScreenSize(window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
+      const handleResize = () => {
+        setScreenSize(window.innerWidth);
+      };
+      window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   const animation = { duration: 10000, easing: (t: number) => t };

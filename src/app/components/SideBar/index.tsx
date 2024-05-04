@@ -5,10 +5,16 @@ import { Slant as Hamburger } from "hamburger-react";
 type Props = {
   screenSize: number;
   isSideBarOpen: boolean;
+  isVideoScrolled: boolean;
   setIsSideBarOpen: (isOpen: boolean) => void;
 };
 
-const SideBar = ({ screenSize, isSideBarOpen, setIsSideBarOpen }: Props) => {
+const SideBar = ({
+  isVideoScrolled,
+  screenSize,
+  isSideBarOpen,
+  setIsSideBarOpen,
+}: Props) => {
   const pages = [
     "All products",
     "Phone",
@@ -29,7 +35,7 @@ const SideBar = ({ screenSize, isSideBarOpen, setIsSideBarOpen }: Props) => {
         <Hamburger
           size={screenSize > 1024 ? 38 : 30}
           toggled={isSideBarOpen}
-          color={screenSize > 1024 ? "#fff" : "#000"}
+          color={screenSize > 1024 && !isVideoScrolled ? "#fff" : "#000"}
           toggle={() => {
             setIsSideBarOpen(!isSideBarOpen);
           }}
