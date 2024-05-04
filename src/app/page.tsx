@@ -1,7 +1,7 @@
 import "modern-normalize";
 import s from "./page.module.scss";
 import Header from "@components/Header";
-import VideoPlayer from "./VideoPlayer";
+import VideoPlayer from "./components/VideoPlayer";
 import PreviewStore from "@components/PreviewStore";
 import Container from "./components/Container";
 import Footer from "./components/Footer";
