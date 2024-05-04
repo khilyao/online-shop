@@ -29,7 +29,9 @@ const Subscribe = () => {
                 Yes, subscribe me to your newsletter
               </label>
             </div>
-            <button className={s.button}>Subscribe</button>
+            <button type="submit" className={s.button}>
+              Subscribe
+            </button>
           </form>
         </Container>
       </div>
