@@ -3,7 +3,7 @@ import s from "./FAQ.module.scss";
 
 const FAQ = () => {
   return (
-    <section>
+    <section style={{ paddingBottom: "200px" }}>
       <Container>
         <h3 className={s.title}>Have a question about a product or order?</h3>
         <a href="" className={s.subtitle}>

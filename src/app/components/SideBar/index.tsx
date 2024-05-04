@@ -1,14 +1,14 @@
 import MotionList from "../MotionList";
 import s from "./SideBar.module.scss";
-import Burger from "@assets/menu.svg";
-import MenuCLoseBtn from "@assets/menu-close.svg";
+import { Slant as Hamburger } from "hamburger-react";
 
 type Props = {
-  isSideBarOpen?: boolean;
+  screenSize: number;
+  isSideBarOpen: boolean;
   setIsSideBarOpen: (isOpen: boolean) => void;
 };
 
-const SideBar = ({ isSideBarOpen, setIsSideBarOpen }: Props) => {
+const SideBar = ({ screenSize, isSideBarOpen, setIsSideBarOpen }: Props) => {
   const pages = [
     "All products",
     "Phone",
@@ -25,22 +25,17 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen }: Props) => {
       className={s.sidebar}
       style={{ pointerEvents: isSideBarOpen ? "auto" : "none" }}
     >
-      {isSideBarOpen ? (
-        <MenuCLoseBtn
-          fill={"#fff"}
-          className={s.menuBtn}
-          onClick={() => {
+      <div className={s.menuBtn}>
+        <Hamburger
+          size={screenSize > 1024 ? 38 : 30}
+          toggled={isSideBarOpen}
+          color={screenSize > 1024 ? "#fff" : "#000"}
+          toggle={() => {
             setIsSideBarOpen(!isSideBarOpen);
           }}
         />
-      ) : (
-        <Burger
-          className={s.menuBtn}
-          onClick={() => {
-            setIsSideBarOpen(!isSideBarOpen);
-          }}
-        />
-      )}
+      </div>
+
       <MotionList items={pages} isListShouldOpen={isSideBarOpen}></MotionList>
     </aside>
   );

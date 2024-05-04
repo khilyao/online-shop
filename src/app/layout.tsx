@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Roboto, Judson } from "next/font/google";
 import "./globals.scss";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-});
-
 const judson = Judson({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const roboto = Roboto({
+  subsets: ["cyrillic"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={(judson.className, roboto.className)}>{children}</body>
+      <body className={`${judson.className} ${roboto.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
