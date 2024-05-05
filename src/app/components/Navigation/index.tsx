@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import s from "./Navigation.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,29 +7,10 @@ import lightLogo from "@assets/lightLogo.png";
 import darkLogo from "@assets/darkLogo.png";
 import Basket from "@assets/basket.svg";
 import SideBar from "@components/SideBar";
+import { storeContext } from "@/app/context/context";
 
-type Props = {
-  isVideoScrolled: boolean;
-};
-
-const Navigation = ({ isVideoScrolled }: Props) => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const [screenSize, setScreenSize] = useState(1280);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setScreenSize(window.innerWidth);
-
-      const handleResize = () => {
-        setScreenSize(window.innerWidth);
-
-        window.addEventListener("resize", handleResize);
-      };
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, []);
+const Navigation = () => {
+  const { screenSize, isVideoScrolled } = useContext(storeContext);
 
   return (
     <nav className={s.nav}>
@@ -47,12 +28,7 @@ const Navigation = ({ isVideoScrolled }: Props) => {
       </Link>
       <div className={s.navBtnGroup}>
         <Basket className={s.basket} fill={"#000"} />
-        <SideBar
-          isVideoScrolled={isVideoScrolled}
-          screenSize={screenSize}
-          isSideBarOpen={isSideBarOpen}
-          setIsSideBarOpen={setIsSideBarOpen}
-        />
+        <SideBar />
       </div>
     </nav>
   );

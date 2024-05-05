@@ -1,20 +1,11 @@
+"use client";
+import { useContext } from "react";
 import MotionList from "../MotionList";
 import s from "./SideBar.module.scss";
 import { Slant as Hamburger } from "hamburger-react";
+import { storeContext } from "@/app/context/context";
 
-type Props = {
-  screenSize: number;
-  isSideBarOpen: boolean;
-  isVideoScrolled: boolean;
-  setIsSideBarOpen: (isOpen: boolean) => void;
-};
-
-const SideBar = ({
-  isVideoScrolled,
-  screenSize,
-  isSideBarOpen,
-  setIsSideBarOpen,
-}: Props) => {
+const SideBar = () => {
   const pages = [
     "All products",
     "Phone",
@@ -25,6 +16,9 @@ const SideBar = ({
     "Help",
     "Contact",
   ];
+
+  const { isSideBarOpen, isVideoScrolled, screenSize, setIsSideBarOpen } =
+    useContext(storeContext);
 
   return (
     <aside
@@ -41,7 +35,6 @@ const SideBar = ({
           }}
         />
       </div>
-
       <MotionList items={pages} isListShouldOpen={isSideBarOpen}></MotionList>
     </aside>
   );

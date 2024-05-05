@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import amdLogo from "@assets/amdLogo.png";
 import appleLogo from "@assets/appleLogo.png";
@@ -31,13 +30,13 @@ const ProductList = () => {
     }
   }, []);
 
-  const animation = { duration: 10000, easing: (t: number) => t };
+  const animation = { duration: 12000, easing: (t: number) => t };
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     rtl: true,
     slides: {
       perView: 5,
-      spacing: 100,
+      // spacing: 100,
     },
     renderMode: "performance",
     drag: false,
@@ -86,7 +85,6 @@ const ProductList = () => {
     <Image
       key={index}
       className={`${s.item} keen-slider__slide`}
-      width={130}
       src={img}
       alt="product"
     />

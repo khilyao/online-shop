@@ -29,7 +29,7 @@ const Header = () => {
       style={{ backgroundColor: isVideoScrolled ? "#fff" : "" }}
     >
       <Container>
-        <Navigation isVideoScrolled={isVideoScrolled} />
+        <Navigation />
       </Container>
     </header>
   );

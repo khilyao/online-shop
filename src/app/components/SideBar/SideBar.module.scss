@@ -15,11 +15,17 @@
 
   transition: transform 200ms linear;
 
-  &:hover {
-    transform: scale(1.2);
+  &:active {
+    transform: scale(1);
   }
 
   @media screen and (min-width: 768px) {
-    right: 22px;
+    right: 46px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

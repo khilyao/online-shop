@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Judson } from "next/font/google";
 import "./globals.scss";
+import StoreProvider from "@context/storeContext";
 
 const judson = Judson({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${judson.className} ${roboto.className}`}>
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
