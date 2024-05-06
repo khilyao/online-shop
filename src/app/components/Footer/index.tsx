@@ -1,4 +1,3 @@
-import Container from "../Container";
 import FAQ from "../FAQ";
 import Subscribe from "../Subscribe";
 import s from "./Footer.module.scss";

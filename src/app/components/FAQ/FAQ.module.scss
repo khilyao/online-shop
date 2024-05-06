@@ -1,4 +1,16 @@
-.title {
+.helpBlock {
+  padding: 0px 25px 45px;
+
+  border-bottom: 2px solid #676767;
+
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 45px;
+  }
+}
+
+.question {
   margin-bottom: 10px;
 
   font-weight: 400;
@@ -6,7 +18,92 @@
   line-height: 1.14;
 }
 
-.subtitle {
+.helpCenter {
   font-weight: 400;
   font-size: 14px;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 25px 50px;
+  border-bottom: 2px solid #676767;
+
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+
+    &:first-child {
+      margin-right: 90px;
+    }
+  }
+
+  @media screen and (min-width: 1240px) {
+    &:first-child {
+      margin-right: 160px;
+    }
+  }
+
+  @media screen and (min-width: 1536px) {
+    &:first-child {
+      margin-right: 240px;
+    }
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+
+  width: 170px;
+}
+
+.title {
+  margin-bottom: 20px;
+
+  line-height: 1.6;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.4;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+
+span.subtitle {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }

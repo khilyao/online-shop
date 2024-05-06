@@ -1,23 +1,20 @@
 import s from "./Subscribe.module.scss";
-import Container from "../Container";
 
 const Subscribe = () => {
   return (
     <section className={s.section}>
       <div className={s.wrapper}>
-        <Container>
-          <div>
-            <h2 className={s.title}>Subscribe to Our Newsletter</h2>
-            <p className={s.subtitle}>
-              Sign up to receive updates on new products and special offers
-            </p>
-          </div>
-        </Container>
+        <div>
+          <h2 className={s.title}>Subscribe to Our Newsletter</h2>
+          <p className={s.subtitle}>
+            Sign up to receive updates on new products and special offers
+          </p>
+        </div>
       </div>
       <div className={s.formWrapper}>
-        <Container>
-          <form className={s.form}>
-            <input type="text" className={s.field} />
+        <form className={s.form}>
+          <input type="text" className={s.field} />
+          <div className={s.subscribeBlock}>
             <div className={s.checkboxField}>
               <input
                 id="newsletter"
@@ -32,8 +29,8 @@ const Subscribe = () => {
             <button type="submit" className={s.button}>
               Subscribe
             </button>
-          </form>
-        </Container>
+          </div>
+        </form>
       </div>
     </section>
   );
