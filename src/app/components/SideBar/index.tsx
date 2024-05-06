@@ -1,9 +1,10 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import MotionList from "../MotionList";
 import s from "./SideBar.module.scss";
 import { Slant as Hamburger } from "hamburger-react";
 import { storeContext } from "@/app/context/context";
+import { useMediaQuery } from "react-responsive";
 
 const SideBar = () => {
   const pages = [
@@ -17,8 +18,18 @@ const SideBar = () => {
     "Contact",
   ];
 
-  const { isSideBarOpen, isVideoScrolled, screenSize, setIsSideBarOpen } =
+  const { isSideBarOpen, isVideoScrolled, setIsSideBarOpen } =
     useContext(storeContext);
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const [hamburgerColor, setHamburgerColor] = useState<string>("#000");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && !isVideoScrolled && isDesktop) {
+      setHamburgerColor("#fff");
+    } else {
+      setHamburgerColor("#000");
+    }
+  }, [isVideoScrolled, isDesktop]);
 
   return (
     <aside
@@ -27,9 +38,9 @@ const SideBar = () => {
     >
       <div className={s.menuBtn}>
         <Hamburger
-          size={screenSize > 1024 ? 38 : 30}
+          size={38}
           toggled={isSideBarOpen}
-          color={screenSize > 1024 && !isVideoScrolled ? "#fff" : "#000"}
+          color={hamburgerColor}
           toggle={() => {
             setIsSideBarOpen(!isSideBarOpen);
           }}

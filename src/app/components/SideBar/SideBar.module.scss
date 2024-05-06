@@ -13,7 +13,7 @@
   z-index: 5;
   pointer-events: auto;
 
-  transition: transform 200ms linear;
+  transition: transform 150ms linear;
 
   &:active {
     transform: scale(1);
@@ -25,7 +25,7 @@
 
   @media screen and (min-width: 1024px) {
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 }

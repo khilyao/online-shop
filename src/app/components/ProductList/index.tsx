@@ -10,33 +10,19 @@ import s from "./ProductList.module.scss";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import useWindowSize from "@rooks/use-window-size";
 
 const ProductList = () => {
-  const [screenSize, setScreenSize] = useState(0);
+  const { innerWidth } = useWindowSize();
+  const screenSize = innerWidth || 0;
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setScreenSize(window.innerWidth);
-
-      const handleResize = () => {
-        setScreenSize(window.innerWidth);
-      };
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, []);
-
-  const animation = { duration: 12000, easing: (t: number) => t };
+  const animation = { duration: 9000, easing: (t: number) => t };
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     rtl: true,
     slides: {
-      perView: 5,
-      // spacing: 100,
+      perView: getSlidesPerView(screenSize),
+      spacing: 60,
     },
     renderMode: "performance",
     drag: false,
@@ -50,6 +36,22 @@ const ProductList = () => {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
   });
+
+  function getSlidesPerView(screenWidth: number): number {
+    if (screenWidth > 1400) {
+      return 7;
+    }
+
+    if (screenWidth > 1200) {
+      return 6;
+    }
+
+    if (screenWidth > 1024) {
+      return 5;
+    }
+
+    return 0;
+  }
 
   const imgLinksMobile = [
     amdLogo,
@@ -94,14 +96,14 @@ const ProductList = () => {
     <>
       {screenSize > 1024 ? (
         <motion.div
-          initial={{ opacity: 0, translateX: "-80px", translateY: "30px" }}
+          initial={{ opacity: 0, translateY: "-40px" }}
           whileInView={{
             opacity: 1,
             scale: 1,
-            translateX: "0px",
+
             translateY: "0px",
           }}
-          transition={{ duration: 2.5 }}
+          transition={{ duration: 1 }}
           ref={ref}
           className={`keen-slider`}
         >

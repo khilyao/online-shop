@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useContext } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import s from "./Navigation.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,24 +8,31 @@ import darkLogo from "@assets/darkLogo.png";
 import Basket from "@assets/basket.svg";
 import SideBar from "@components/SideBar";
 import { storeContext } from "@/app/context/context";
+import { useMediaQuery } from "react-responsive";
 
 const Navigation = () => {
-  const { screenSize, isVideoScrolled } = useContext(storeContext);
+  const [logo, setLogo] = useState<ReactNode | null>(null);
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+
+  const { isVideoScrolled } = useContext(storeContext);
+
+  const generateContentLogo = () => {
+    return !isDesktop || isVideoScrolled ? (
+      <Image className={s.logo} src={darkLogo} alt="Logo" />
+    ) : (
+      <Image className={s.logo} src={lightLogo} alt="Logo" />
+    );
+  };
+
+  useEffect(() => {
+    const newLogo = generateContentLogo();
+
+    setLogo(newLogo);
+  }, [isVideoScrolled]);
 
   return (
     <nav className={s.nav}>
-      <Link href={"/"}>
-        {screenSize > 1024 && !isVideoScrolled ? (
-          <Image
-            className={s.logo}
-            src={lightLogo}
-            alt="Logo"
-            priority={true}
-          />
-        ) : (
-          <Image className={s.logo} src={darkLogo} alt="Logo" priority={true} />
-        )}
-      </Link>
+      <Link href={"/"}>{logo}</Link>
       <div className={s.navBtnGroup}>
         <Basket className={s.basket} fill={"#000"} />
         <SideBar />

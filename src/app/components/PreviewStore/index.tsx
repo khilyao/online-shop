@@ -1,6 +1,10 @@
-import ProductList from "../ProductList";
 import s from "./PreviewStore.module.scss";
 import AnimatedText from "@components/UI/AnimatedText";
+import dynamic from "next/dynamic";
+
+const ProductList = dynamic(() => import("@components/ProductList"), {
+  ssr: false,
+});
 
 const PreviewStore = () => {
   return (

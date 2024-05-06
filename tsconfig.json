@@ -22,7 +22,8 @@
       "@components/*": ["./src/app/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@animation/*": ["./src/app/animation/*"],
-      "@context/*": ["./src/app/context/*"]
+      "@context/*": ["./src/app/context/*"],
+      "@hooks/*": ["./src/app/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
