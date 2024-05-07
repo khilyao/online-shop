@@ -27,7 +27,7 @@ const Subscribe = () => {
               </label>
             </div>
             <button type="submit" className={s.button}>
-              Subscribe
+              Send a message
             </button>
           </div>
         </form>
