@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Roboto, Judson } from "next/font/google";
 import "./globals.scss";
 import StoreProvider from "@context/storeContext";
+import localFont from "next/font/local";
+
+// const myFont = localFont({ src: "./my-font.woff2" });
 
 const judson = Judson({
   subsets: ["latin"],

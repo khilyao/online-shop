@@ -22,7 +22,7 @@ const ProductList = () => {
     rtl: true,
     slides: {
       perView: getSlidesPerView(screenSize),
-      spacing: 60,
+      spacing: getSpacingPerView(screenSize),
     },
     renderMode: "performance",
     drag: false,
@@ -38,16 +38,36 @@ const ProductList = () => {
   });
 
   function getSlidesPerView(screenWidth: number): number {
-    if (screenWidth > 1400) {
-      return 7;
-    }
-
     if (screenWidth > 1200) {
       return 6;
     }
 
     if (screenWidth > 1024) {
       return 5;
+    }
+
+    return 0;
+  }
+
+  function getSpacingPerView(screenWidth: number): number {
+    if (screenWidth > 1700) {
+      return 150;
+    }
+
+    if (screenWidth > 1536) {
+      return 100;
+    }
+
+    if (screenWidth > 1400) {
+      return 70;
+    }
+
+    if (screenWidth > 1200) {
+      return 50;
+    }
+
+    if (screenWidth > 1024) {
+      return 50;
     }
 
     return 0;
