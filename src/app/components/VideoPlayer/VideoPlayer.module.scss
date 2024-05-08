@@ -36,11 +36,11 @@
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.9);
 
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25),
-    0 0 20px rgba(255, 255, 255, 0.25), 0 0 30px rgba(255, 255, 255, 0.25),
-    0 0 40px rgba(255, 255, 255, 0.25), 0 0 50px rgba(255, 255, 255, 0.25),
-    0 0 60px rgba(255, 255, 255, 0.25), 0 0 70px rgba(255, 255, 255, 0.25);
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(255, 255, 255, 0.2), 0 0 50px rgba(255, 255, 255, 0.2),
+    0 0 60px rgba(255, 255, 255, 0.2), 0 0 70px rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
 
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -56,8 +56,8 @@
 
 .modalBtn {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 20px;
+  bottom: 20px;
 
   display: flex;
   align-items: center;
@@ -66,12 +66,9 @@
   width: 60px;
   height: 60px;
 
-  color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
-
   font-size: 10px;
   font-weight: 400;
-  line-height: 4px;
   letter-spacing: 0.08em;
   text-align: left;
 
@@ -79,28 +76,47 @@
   background-color: #fff;
   border: none;
   border-radius: 50%;
+
+  transition: all 200ms linear;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #000;
+
+    transform: scale(1.05);
+  }
 }
 
 .accentLetter {
   position: absolute;
-  left: 3px;
-  font-size: 40px;
+  top: 12px;
+  left: 6px;
+  font-size: 34px;
   font-family: "Roboto", sans-serif;
 }
 
 .disclaimer {
   position: absolute;
-  top: 50%;
-  left: 300%;
+  top: 40%;
+  left: 160px;
 
   display: inline-block;
 
   color: #fff;
   letter-spacing: 1.27em;
   text-transform: uppercase;
+  font-size: 12px;
   transform: translate(-50%);
+  transition: all 200ms linear;
 
   &::first-letter {
     color: #000;
+
+    .modalBtn:hover &,
+    .modalBtn:focus & {
+      color: #fff;
+    }
   }
 }
