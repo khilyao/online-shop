@@ -1,6 +1,7 @@
 "use client";
 import s from "./Modal.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, MouseEvent } from "react";
+// import Signature from "@assets/signature.svg";
 
 type Props = {
   onClose?: () => void;
@@ -8,9 +9,15 @@ type Props = {
 };
 
 const Modal = ({ onClose, isOpen }: Props) => {
+  const windowRef = useRef<HTMLDivElement>(null);
+
+  const handleClickInsideWindow = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+  };
+
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && onClose) {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && onClose) {
         onClose();
       }
     };
@@ -25,45 +32,27 @@ const Modal = ({ onClose, isOpen }: Props) => {
   return (
     <>
       {isOpen && (
-        <div className={s.backdrop}>
-          <div className={s.window}>
-            <button className={s.button} onClick={onClose}>
-              Close
-            </button>
+        <div className={s.backdrop} onClick={onClose}>
+          <div
+            ref={windowRef}
+            className={s.window}
+            onClick={handleClickInsideWindow}
+          >
             <h2 className={s.title}>Disclaimer</h2>
-            <p className={s.firstDescription}>
-              THIS SITE AND ALL THE CONTENT MADE AVAILABLE THROUGH THIS SITE ARE
-              PROVIDED TO THE USERS “AS IS” WITHOUT ANY EXPRESS WARRANTIES OR
-              REPRESENTATIONS OF ANY KIND. СSО DESIGN, DISCLAIMS ALL
-              REPRESENTATION, WARRANTIES, TERMS AND CONDITIONS WITH RESPECT TO
-              THIS SITE AND ALL THE CONTENT. СSО DESIGN,. MAY NOT WARRANT THAT
-              THE CONTENT SHALL BE AT ANY TIME ACCURRATE, COMPLETE AND FREE OF
-              ERROR AND THAT THIS SITE WILL BE AT ANY TIME SECURE AND AVAILABLE
-              FOR USE. СSО DESIGN, SHALL NOT BE LIABLE FOR ANY DAMAGES ARISING
-              OUT OF OR IN CONNECTION WITH THE ACCESS OR USE OF THE SITE BY ITS
-              VISITORS.
-            </p>
-            <p className={s.secondDescription}>
-              The Content is subject to intellectual property rights and laws,
+            <hr />
+            <p className={`${s.firstDescription} ${s.text}`}>
+              Content is subject to intellectual property rights and laws,
               namely copyright rights and trademark rights. СSО DESIGN, is the
               owner of the internationally registered trademarks СSО and all
               associated trade names, marks, signs and logos. СSО DESIGN,. is
               further owner of the registered Community design and Design patent
               for elctronic cigiritt pipe their parts and accessories protected
-              by industrial rights regulations. Any use of the Content and
-              trademarks including (but not limited to) reproduction,
-              dissemination, modification, other form of exploitation,
-              distribution and publishing of any parts of the Content without
-              prior express approval of СSО DESIGN, is prohibited. The
-              trademarks may only be used in conjunction with goods produced by
-              СSО DESIGN, and/or in compliance with its’ trademark policy,
-              otherwise only with the express prior approval of СSО DESIGN.
-              Unauthorized use of the Site, Content, trademarks or other
-              intellectual and/or industrial property owned by СSО DESIGN. may
-              result in monetary damages and other civil and criminal penalties
-              for copyright, trademark and other intelectual rights
-              infringement.
+              by industrial
             </p>
+            <p className={s.copyright}>
+              All copy right reserved by CreativeClout.io
+            </p>
+            {/* <Signature className={s.icon} /> */}
           </div>
         </div>
       )}
