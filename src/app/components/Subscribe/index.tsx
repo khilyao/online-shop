@@ -1,6 +1,14 @@
+"use client";
 import s from "./Subscribe.module.scss";
+import { useState, ChangeEvent } from "react";
 
 const Subscribe = () => {
+  const [email, setEmail] = useState("");
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <section className={s.section}>
       <div className={s.wrapper}>
@@ -13,7 +21,12 @@ const Subscribe = () => {
       </div>
       <div className={s.formWrapper}>
         <form className={s.form}>
-          <input type="text" className={s.field} />
+          <input
+            type="text"
+            className={s.field}
+            value={email}
+            onChange={handleInput}
+          />
           <div className={s.subscribeBlock}>
             <div className={s.checkboxField}>
               <input
