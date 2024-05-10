@@ -21,7 +21,11 @@ const Modal = ({ onClose, isOpen }: Props) => {
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
+    if (isOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);

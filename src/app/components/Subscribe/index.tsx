@@ -1,6 +1,9 @@
 "use client";
 import s from "./Subscribe.module.scss";
 import { useState, ChangeEvent } from "react";
+import Checkbox from "@mui/material/Checkbox";
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
@@ -22,18 +25,24 @@ const Subscribe = () => {
       <div className={s.formWrapper}>
         <form className={s.form}>
           <input
-            type="text"
+            type="email"
             className={s.field}
             value={email}
             onChange={handleInput}
           />
           <div className={s.subscribeBlock}>
             <div className={s.checkboxField}>
-              <input
+              <Checkbox
+                {...label}
                 id="newsletter"
                 name="newsletter"
                 className={s.checkbox}
-                type="checkbox"
+                sx={{
+                  color: "#fffbfc",
+                  "&.Mui-checked": {
+                    color: "#6c8ef6",
+                  },
+                }}
               />
               <label htmlFor="newsletter" className={s.signature}>
                 Yes, subscribe me to your newsletter
