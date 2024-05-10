@@ -1,7 +1,6 @@
 "use client";
 import s from "./Modal.module.scss";
 import { useEffect, useRef, MouseEvent } from "react";
-// import Signature from "@assets/signature.svg";
 
 type Props = {
   onClose?: () => void;
@@ -31,31 +30,42 @@ const Modal = ({ onClose, isOpen }: Props) => {
 
   return (
     <>
-      {isOpen && (
-        <div className={s.backdrop} onClick={onClose}>
-          <div
-            ref={windowRef}
-            className={s.window}
-            onClick={handleClickInsideWindow}
-          >
-            <h2 className={s.title}>Disclaimer</h2>
-            <hr />
-            <p className={`${s.firstDescription} ${s.text}`}>
-              Content is subject to intellectual property rights and laws,
-              namely copyright rights and trademark rights. СSО DESIGN, is the
-              owner of the internationally registered trademarks СSО and all
-              associated trade names, marks, signs and logos. СSО DESIGN,. is
-              further owner of the registered Community design and Design patent
-              for elctronic cigiritt pipe their parts and accessories protected
-              by industrial
-            </p>
-            <p className={s.copyright}>
-              All copy right reserved by CreativeClout.io
-            </p>
-            {/* <Signature className={s.icon} /> */}
-          </div>
+      <div
+        className={`${s.backdrop} ${isOpen && s.backdropActive}`}
+        onClick={onClose}
+      >
+        <div
+          ref={windowRef}
+          className={`${s.window} ${isOpen && s.windowActive}`}
+          onClick={handleClickInsideWindow}
+        >
+          <h2 className={s.title}>Disclaimer</h2>
+          <hr />
+          <p className={`${s.firstDescription} ${s.text}`}>
+            This website and all content available through this website are
+            provided to users &quot;as is&quot; without any express warranties
+            or representations of any kind. creative clout, disclaims all
+            representations, warranties, terms and conditions relating to this
+            website and all content. creative clout design.
+          </p>
+          <p className={`${s.secondDescription} ${s.text}`}>
+            Creative clout. shall not be liable for any damages arising out of
+            or related to the access or use of the Website by its visitors. Any
+            use of the content and trademarks including (but not limited to)
+            reproduction, publication and any other form of exploitation of
+            parts of the content designed by the Website without express consent
+            is prohibited. Previews from creative clout design, s.r.o.
+            Unauthorized use of the Website, Content, trademarks, or other
+            intellectual and/or industrial property owned by Creative Clout, It
+            may result in monetary damages and other civil and criminal
+            penalties for infringement of copyrights, trademarks, and other
+            intellectual property rights.
+          </p>
+          <p className={s.copyright}>
+            All copy right reserved by CreativeClout.io
+          </p>
         </div>
-      )}
+      </div>
     </>
   );
 };

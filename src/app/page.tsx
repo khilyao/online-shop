@@ -15,7 +15,7 @@ export default function Home() {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const viewportHeight = window.innerHeight;
-      setIsVideoScrolled(scrollTop > viewportHeight - 35);
+      setIsVideoScrolled(scrollTop > viewportHeight - 150);
     };
 
     window.addEventListener("scroll", handleScroll);

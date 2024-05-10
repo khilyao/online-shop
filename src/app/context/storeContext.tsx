@@ -11,12 +11,15 @@ type Props = {
 const StoreProvider = ({ children }: Props) => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [isVideoScrolled, setIsVideoScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const providerValue = {
     isSideBarOpen,
     setIsSideBarOpen,
     isVideoScrolled,
     setIsVideoScrolled,
+    isModalOpen,
+    setIsModalOpen,
   };
 
   return (

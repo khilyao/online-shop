@@ -1,37 +1,7 @@
 import Link from "next/link";
-// import Image from "next/image";
-// import lightLogo from "@assets/lightLogo.png";
 import s from "./FAQ.module.scss";
-// import { useMediaQuery } from "react-responsive";
-// import { ReactNode, useContext, useEffect, useState } from "react";
-// import { storeContext } from "@/app/context/context";
 
 const FAQ = () => {
-  // const [logoMarkup, setLogoMarkup] = useState<ReactNode | null>(null);
-  // const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
-
-  // const { isVideoScrolled } = useContext(storeContext);
-
-  // const generateLogoMarkup = () => {
-  //   return isDesktop ? (
-  //     <Image
-  //       width={45}
-  //       height={45}
-  //       className={s.logo}
-  //       src={lightLogo}
-  //       alt="Logo"
-  //     />
-  //   ) : (
-  //     <div>fads</div>
-  //   );
-  // };
-
-  // useEffect(() => {
-  //   const logoMarkup = generateLogoMarkup();
-
-  //   setLogoMarkup(logoMarkup);
-  // }, []);
-
   return (
     <section>
       <div className={s.helpBlock}>

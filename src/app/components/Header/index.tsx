@@ -6,11 +6,11 @@ import { useContext, useEffect, useState } from "react";
 import { storeContext } from "@/app/context/context";
 
 const Header = () => {
-  const { isVideoScrolled } = useContext(storeContext);
+  const { isModalOpen, isVideoScrolled } = useContext(storeContext);
 
   return (
     <header
-      className={s.header}
+      className={`${s.header} ${isModalOpen && s.modalHiddenByModal} `}
       style={{ backgroundColor: isVideoScrolled ? "#fff" : "" }}
     >
       <Container>

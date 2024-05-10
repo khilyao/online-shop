@@ -37,7 +37,7 @@
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
     0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2),
@@ -83,7 +83,7 @@
   transition: all 200ms linear;
   cursor: pointer;
 
-  z-index: 20;
+  z-index: 30;
 
   &:hover {
     color: #fff;
@@ -107,15 +107,19 @@
 }
 
 .closeBtn {
-  margin-left: 3px;
-  width: 30px;
-  height: 30px;
+  margin-right: 2px;
+  width: 24px;
+  height: 24px;
   fill: #000;
 
-  transition: fill 200ms linear;
+  transition: fill 200ms linear, transform 200ms linear;
+
+  transform: rotate(0deg);
+  transform-origin: center;
 
   .modalBtn:hover & {
     fill: #fff;
+    transform: rotate(180deg);
   }
 
   .modalBtn:focus & {
@@ -154,6 +158,10 @@
 
     .modalBtn:focus & {
       color: #000;
+    }
+
+    .modalBtn:active & {
+      color: #fff;
     }
   }
 }
