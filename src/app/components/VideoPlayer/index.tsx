@@ -19,7 +19,14 @@ const VideoPlayer = () => {
   return (
     <>
       <div className={s.videoWrapper}>
-        <video className={s.video} src="/video.mp4" autoPlay loop muted></video>
+        <video
+          className={s.video}
+          src="/video.mp4"
+          autoPlay
+          playsInline
+          loop
+          muted
+        ></video>
         <p className={s.tempText}>Coming soon</p>
         <button
           id="modalBtn"
