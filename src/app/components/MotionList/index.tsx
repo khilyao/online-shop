@@ -15,8 +15,8 @@ const MotionList = ({ items, isListShouldOpen }: Props) => {
       variants={sidebar}
       animate={isListShouldOpen ? "open" : "closed"}
       style={{
-        color: isListShouldOpen ? "#fff" : "transparent",
-        background: isListShouldOpen ? "#0129ff" : "transparent",
+        color: isListShouldOpen ? "#e1dddd" : "transparent",
+        background: isListShouldOpen ? "#3d3c47" : "transparent",
         pointerEvents: isListShouldOpen ? "auto" : "none",
       }}
       transition={{ duration: 1.4 }}

@@ -6,16 +6,18 @@
 
   height: 100vh;
   max-height: 100vh;
-  width: 220px;
+  width: 200px;
 
   padding: 0 0 0 18px;
   padding-top: 90px;
   padding-bottom: 20px;
 
-  font-family: "Judson", serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 0.9;
+  font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.6em;
+  letter-spacing: 0.2em;
+
   list-style-type: none;
   transition: background-color 600ms linear, color 400ms linear;
 
@@ -27,11 +29,10 @@
 
   @media screen and (min-width: 1024px) {
     max-height: 1000px;
-    width: 400px;
+    width: 320px;
 
     padding-left: 40px;
-    gap: 60px;
 
-    font-size: 15px;
+    font-size: 18px;
   }
 }

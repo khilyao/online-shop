@@ -6,7 +6,6 @@ type AnimatedTextProps = {
   el?: keyof JSX.IntrinsicElements;
   className?: string;
   once?: boolean;
-  repeatDelay?: number;
   animation?: {
     hidden: Variant;
     visible: Variant;
@@ -27,12 +26,11 @@ const defaultAnimations = {
   },
 };
 
-export const AnimatedText2 = ({
+export const AnimatedText = ({
   text,
   el: Wrapper = "p",
   className,
-  once,
-  repeatDelay,
+  once = true,
   animation = defaultAnimations,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
@@ -41,25 +39,12 @@ export const AnimatedText2 = ({
   const isInView = useInView(ref, { amount: 0.5, once });
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    const show = () => {
-      controls.start("visible");
-      if (repeatDelay) {
-        timeout = setTimeout(async () => {
-          await controls.start("hidden");
-          controls.start("visible");
-        }, repeatDelay);
-      }
-    };
-
     if (isInView) {
-      show();
-    } else {
+      controls.start("visible");
+    } else if (!once) {
       controls.start("hidden");
     }
-
-    return () => clearTimeout(timeout);
-  }, [isInView]);
+  }, [isInView, once]);
 
   return (
     <Wrapper className={className}>
@@ -96,4 +81,4 @@ export const AnimatedText2 = ({
   );
 };
 
-export default AnimatedText2;
+export default AnimatedText;

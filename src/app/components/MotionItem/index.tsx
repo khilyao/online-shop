@@ -13,8 +13,8 @@ const MotionItem = ({ children }: Props) => {
     <motion.li
       className={s.item}
       variants={itemVariants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
     >
       <Link href={""} className={s.link}>
         {children}

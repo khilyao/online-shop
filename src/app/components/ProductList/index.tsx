@@ -11,11 +11,13 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { motion } from "framer-motion";
 import useWindowSize from "@rooks/use-window-size";
+import { useEffect, useState } from "react";
 
 const ProductList = () => {
   const { innerWidth } = useWindowSize();
   const screenSize = innerWidth || 0;
 
+  const [hasAnimated, setHasAnimated] = useState(false);
   const animation = { duration: 9000, easing: (t: number) => t };
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
@@ -112,17 +114,25 @@ const ProductList = () => {
     />
   ));
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!hasAnimated && window.scrollY > 0) {
+        setHasAnimated(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
     <>
       {screenSize > 1024 ? (
         <motion.div
           initial={{ opacity: 0, translateY: "-40px" }}
-          whileInView={{
-            opacity: 1,
-            scale: 1,
-
-            translateY: "0px",
-          }}
+          animate={hasAnimated ? { opacity: 1, translateY: "0px" } : {}}
           transition={{ duration: 1 }}
           ref={ref}
           className={`keen-slider`}
@@ -130,20 +140,14 @@ const ProductList = () => {
           {desktopPhoto}
         </motion.div>
       ) : (
-        <>
-          <motion.ul
-            initial={{ opacity: 0, translateX: "-80px" }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              translateX: "0px",
-            }}
-            transition={{ duration: 1 }}
-            className={s.list}
-          >
-            {mobilePhoto}
-          </motion.ul>
-        </>
+        <motion.ul
+          initial={{ opacity: 0, translateX: "-80px" }}
+          animate={hasAnimated ? { opacity: 1, translateX: "0px" } : {}}
+          transition={{ duration: 1 }}
+          className={s.list}
+        >
+          {mobilePhoto}
+        </motion.ul>
       )}
     </>
   );

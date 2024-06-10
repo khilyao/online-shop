@@ -24,12 +24,15 @@ const SideBar = () => {
   const [hamburgerColor, setHamburgerColor] = useState<string>("#000");
 
   useEffect(() => {
-    if (typeof window !== "undefined" && !isVideoScrolled && isDesktop) {
+    if (
+      (typeof window !== "undefined" && !isVideoScrolled && isDesktop) ||
+      isSideBarOpen
+    ) {
       setHamburgerColor("#fff");
     } else {
       setHamburgerColor("#000");
     }
-  }, [isVideoScrolled, isDesktop]);
+  }, [isVideoScrolled, isDesktop, isSideBarOpen]);
 
   return (
     <aside
