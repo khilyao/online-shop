@@ -49,43 +49,46 @@ const FAQ = () => {
               Privacy Policy
             </Link>
             <Link href="" className={s.subtitle}>
-              Refund Policy
-            </Link>
-            <Link href="" className={s.subtitle}>
               Cookies Policy
             </Link>
             <Link href="" className={s.subtitle}>
               Accessibility Statement
+            </Link>
+            <Link href="message.pdf" className={s.subtitle}>
+              File
             </Link>
           </div>
         </div>
         <div className={s.infoRow}>
           <div className={s.infoBlock}>
             <h3 className={s.title}>Follow Us</h3>
-            <a href="" className={s.subtitle}>
+            <Link href="" className={s.subtitle}>
               Facebook
-            </a>
-            <a href="" className={s.subtitle}>
+            </Link>
+            <Link href="" className={s.subtitle}>
               Instagram
-            </a>
-            <a href="" className={s.subtitle}>
+            </Link>
+            <Link href="" className={s.subtitle}>
               Telegram
-            </a>
+            </Link>
+            <Link href="" className={s.subtitle}>
+              LinkedIn
+            </Link>
             <span className={s.subtitle} style={{ marginTop: "18px" }}>
-              &#169; 2024 by ITW
+              &#169; 2024 by creative clout
             </span>
           </div>
           <div className={s.infoBlock}>
             <h3 className={s.title}>Contact</h3>
             <Link href="mailto:info@iec.com" className={s.subtitle}>
-              info@iec.com
+              info@bubublu.com
             </Link>
-            <a href="tel:1234567890" className={s.subtitle}>
-              123-456-7890
+            <a href="tel:0788888888" className={s.subtitle}>
+              0788888888
             </a>
-            <a className={s.subtitle} style={{ marginTop: "22px" }}>
-              Zuirch, SW 94158 Langstrass 123 ,
-            </a>
+            <Link href="" className={s.subtitle} style={{ marginTop: "22px" }}>
+              Zuirch, SW 94158 Langstrass 123
+            </Link>
           </div>
         </div>
       </div>

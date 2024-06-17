@@ -5,8 +5,7 @@
   gap: 45px;
 
   height: 100vh;
-  max-height: 100vh;
-  width: 200px;
+  width: 220px;
 
   padding: 0 0 0 18px;
   padding-top: 90px;
@@ -16,7 +15,7 @@
   line-height: 0.9;
   font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.4em;
 
   list-style-type: none;
   transition: background-color 600ms linear, color 400ms linear;
@@ -29,7 +28,7 @@
 
   @media screen and (min-width: 1024px) {
     max-height: 1000px;
-    width: 320px;
+    width: 360px;
 
     padding-left: 40px;
 
