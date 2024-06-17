@@ -8,14 +8,12 @@ import { useMediaQuery } from "react-responsive";
 
 const SideBar = () => {
   const pages = [
-    "Phone",
-    "PC",
+    "All Products",
+    "Special Offers",
     "Accessories",
-    "Request repair",
-    "Contact",
-    "Request product",
-    "Help",
-    "All products",
+    "New Arrivals",
+    "Eco technology",
+    "Case to study",
   ];
 
   const { isSideBarOpen, isVideoScrolled, setIsSideBarOpen } =

@@ -10,7 +10,7 @@ const PreviewStore = () => {
   return (
     <section className={s.section}>
       <div className={s.store}>
-        <AnimatedText text={"In our store"} className={s.title} />
+        <AnimatedText text={"In our partner"} className={s.title} />
       </div>
       <ProductList />
     </section>
