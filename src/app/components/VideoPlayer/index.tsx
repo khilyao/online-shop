@@ -21,7 +21,7 @@ const VideoPlayer = () => {
       <div className={s.videoWrapper}>
         <video
           className={s.video}
-          src="toilet-video.mp4"
+          src="toilet-video-new.mp4"
           autoPlay
           playsInline
           loop

@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import amdLogo from "@assets/amdLogo.png";
-import appleLogo from "@assets/appleLogo.png";
-import dellLogo from "@assets/dellLogo.png";
-import asusLogo from "@assets/asusLogo.png";
-import hpLogo from "@assets/hpLogo.png";
-import intelLogo from "@assets/intelLogo.png";
+import amdLogo from "@assets/img-1.png";
+import appleLogo from "@assets/img-2.png";
+import dellLogo from "@assets/img-3.png";
+import asusLogo from "@assets/img-4.jpeg";
+import hpLogo from "@assets/img-5.png";
+import intelLogo from "@assets/img-6.png";
 import s from "./ProductList.module.scss";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";

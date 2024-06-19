@@ -29,12 +29,6 @@ const FAQ = () => {
             >
               New Arrivals
             </Link>
-            <Link href="" className={s.subtitle}>
-              Speakers & Headphones
-            </Link>
-            <Link href="" className={s.subtitle}>
-              Phones & Accessories
-            </Link>
           </div>
           <div className={s.infoBlock}>
             <h3 className={s.title}>Policy</h3>

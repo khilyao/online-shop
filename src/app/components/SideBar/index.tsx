@@ -10,7 +10,6 @@ const SideBar = () => {
   const pages = [
     "All Products",
     "Special Offers",
-    "Accessories",
     "New Arrivals",
     "Eco technology",
     "Case to study",
