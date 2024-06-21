@@ -11,14 +11,14 @@ const Auth = ({ onAuth }: Props) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    if (pass === "cc2024") {
+    if (pass === "a2610") {
       onAuth(true);
-      localStorage.setItem("isPasswordEntered", JSON.stringify(true));
+      localStorage.setItem("isPassEntered", JSON.stringify(true));
     }
   };
 
   useEffect(() => {
-    if (localStorage.getItem("isPasswordEntered")) {
+    if (localStorage.getItem("isPassEntered")) {
       onAuth(true);
     }
   }, []);
