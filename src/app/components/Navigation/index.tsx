@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 // import lightLogo from "@assets/lightLogo.png";
 // import darkLogo from "@assets/darkLogo.png";
-import logo from "@assets/logo.png";
+import logo from "@assets/yadin.png";
 import SideBar from "@components/SideBar";
 import { storeContext } from "@/app/context/context";
 // import { useMediaQuery } from "react-responsive";
