@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "@assets/logo.png";
+import logo from "@assets/yadin.png";
 import s from "./preload.module.scss";
 import { Oval } from "react-loader-spinner";
 
@@ -34,7 +34,7 @@ const Preload = ({ setShowMainContent }: Props) => {
       onTransitionEnd={handleTransitionEnd}
     >
       <div className={s.loading}>
-        <Oval
+        {/* <Oval
           visible={true}
           height="280"
           width="280"
@@ -43,8 +43,8 @@ const Preload = ({ setShowMainContent }: Props) => {
           secondaryColor="#08139e"
           ariaLabel="oval-loading"
           wrapperClass={s.anim}
-        />
-        <Image src={logo} alt="logo" />
+        /> */}
+        <Image src={logo} width={340} height={340} alt="logo" />
       </div>
     </div>
   );
