@@ -26,19 +26,19 @@ const Auth = ({ onAuth }: Props) => {
   return (
     <div className={s.formWrapper}>
       <form className={s.form} onSubmit={handleSubmit}>
-        <label className={s.label} htmlFor="pass">
+        <label className={s.label} htmlFor='pass'>
           Password
         </label>
         <input
-          placeholder="Enter your password"
+          placeholder='Enter your password'
           className={s.field}
           onChange={(e) => {
             setPass(e.target.value);
           }}
-          id="pass"
+          id='pass'
           value={pass}
-          name="pass"
-          type="password"
+          name='pass'
+          type='password'
         />
       </form>
     </div>

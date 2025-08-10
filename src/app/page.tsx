@@ -39,7 +39,16 @@ export default function Home() {
 
   return (
     <>
-      {!showMainContent ? (
+      <>
+        <Header />
+        <main className={s.main}>
+          <VideoPlayer />
+          <PreviewStore />
+        </main>
+        <Footer />
+      </>
+
+      {/* {!showMainContent ? (
         <Preload setShowMainContent={setShowMainContent} />
       ) : (
         <>
@@ -56,7 +65,7 @@ export default function Home() {
             <Auth onAuth={setIsAuthenticated} />
           )}
         </>
-      )}
+      )} */}
     </>
   );
 }
